@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modeling and Simulation 2022</title>
+    <link rel="stylesheet" href="bootstrap.css.map"/>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <link rel="stylesheet" href="normalize.css"/>
+    <link rel="stylesheet" href="all.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <main>
+        <div class="heading">
+            <h2 class="capitalize">Single channel queuing system simulation</h2>
+            <div  class="customers-count">
+               <span id="customers-count">100</span> 
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="waiting-time customers-count">
+                <span id="avgWaitTime"></span>
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <div id="teststatHolder" class="testStatus customers-count">
+                <span id="testStatus"></span>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="row charts-group">
+                <div class="col">
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="chart-container">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="chart-container">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="chart-container">
+                        <canvas id="myChart4"></canvas>
+                    </div>
+                </div>  
+            </div>
+            <!-- <div class="row">
+                <div class="col-12">
+                    <div class="chart-container">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="container">
+            <div class="row mobile">
+                <div class="col">
+                    <div class="customers">
+                        <h5 class="capitalize">customers in System</h5>
+                        <i class="fa-solid fa-user-group fa-3x"></i>
+                        <span id="customers-in-system" class="customers-in-system">0</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="server">
+                        <h5 class="capitalize">server <br> status</h5>
+                        <i id="server-icon" class="fa-solid fa-user-tie  fa-3x"></i>
+                        <span  id="server-status" class="server-status">idle</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="customers">
+                        <h5 class="capitalize">customers in Queue</h5>
+                        <i class="fa-solid fa-user-group queue fa-3x"></i>
+                        <span id="queue" class="customers-in-system">0</span>
+                    </div> 
+                </div>
+                <div class="col">
+                    <div class="customers">
+                        <h5 class="capitalize">Departed customers</h5>
+                        <i class="fa-solid fa-user-group fa-3x"></i>
+                        <span id="departed" class="customers-in-system">0</span>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="control-container">
+            <div class="control-room">  
+                <div id="limit" class="hidden limit">You cannot exceed 100 customers!</div>
+                <button id="start" class="start capitalize">Start</button>
+                <button id="reset" class="reset capitalize">Reset</button>
+            </div>
+            <div class="output-container">
+                <table class="table">
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col">(A)<br> Customer </th>
+                        <th scope="col">(B) <br> Time since <br> last Arrival </th>
+                        <th scope="col">(C) <br> Arrival Time </th>
+                        <th scope="col">(D) <br> Service Time </th>
+                        <th scope="col">(E) <br> Time Service <br>Begins</th>
+                        <th scope="col">(F) <br>Time customer <br>waits in queue </th>
+                        <th scope="col">(G) <br> Time service <br> ends</th>
+                        <th scope="col">(H) <br> Time customer <br>spends in system </th>
+                        <th scope="col">(I) <br> idle time <br>of server</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body">       
+                    </tbody>
+                </table>
+             </div>   
+        </div>
+    </main>
+    <!--start script files-->
+    <script src="bootstrap.min.js.map"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="all.min.js"></script> <!--fontAwesome v6.1-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
